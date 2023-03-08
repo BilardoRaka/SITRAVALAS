@@ -31,7 +31,7 @@ class Email extends Mailable
     public function build()
     {
         return $this
-            ->from($address = 'berkahamanahsyariah@gmail.com', $name = 'Admin')
+            ->from($address = 'bilardoraka65@gmail.com', $name = 'Admin')
             ->markdown('notifications.email')->with('body', $this->body);
     }
 }

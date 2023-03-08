@@ -3,7 +3,7 @@
 <head>
 </head>
 @slot('header')
-@component('mail::header', ['url' => config('app.url')])
+@component('mail::header', ['url' => 'https://github.com/BilardoRaka'])
 <p style="text-transform:capitalize;">PT. BERKAH AMANAH SYARIAH - CABANG {{ $body['user'] }}</p>
 @endcomponent
 @endslot
@@ -51,17 +51,9 @@ Jenis Transaksi : {{ $body['jt'] }}
 <td colspan="3" align="left">Kredit</td>
 <td align="right">Rp. {{ number_format($body['transaction']->kredit,2,",",".") }}</td>
 </tr>
+</tbody>
 @endif
-{{-- subcopy --}}
-@slot('subcopy')
-@component('mail::subcopy')
-<p style="text-align:justify;">Untuk dapat membantu pelanggan kedepan dalam keperluan menukarkan valuta asing, kami telah membuat Bot WhatsApp yang dapat digunakan untuk mengecek lokasi kios perusahaan serta mengetahui harga kurs valuta asing secara real-time. Segera kunjungi nomor tersebut dan ketik 'IHELP' di private message untuk informasi lebih lanjut.</p>
-{{-- button --}}
-@component('mail::button', ['url' => 'https://wa.me/6285155288534?text=IHELP'])
-Kunjungi Bot Whatapp
-@endcomponent
-@endcomponent
-@endslot
+
 {{-- footer --}}
 @slot('footer')
 @component('mail::footer')

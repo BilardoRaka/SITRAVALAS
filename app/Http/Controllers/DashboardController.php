@@ -15,14 +15,14 @@ class DashboardController extends Controller
     public function index(){
 
         //Call APIs
-        $request = Http::get("http://127.0.0.1:8000");
-        $pesan = "";
+        $request = Http::get("https://idrexchangerate-bilardoraka64.b4a.run");
 
-        $collection = collect(json_decode($request))->all();
-  
+        $kursFeed = collect(json_decode($request))->get("kursFeed");
+        $date = collect(json_decode($request))->get("Date");
+        // dd($date);
         return view('dashboard.index',[
-            'forexes' => $collection,
-            'pesan' => $pesan
+            'forexes' => $kursFeed,
+            'tanggal' => $date
         ]);
     }
 
