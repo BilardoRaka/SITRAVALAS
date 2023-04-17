@@ -26,14 +26,16 @@
             $float = (float)$replace;
             $marginBeli = $float * 0.98;
             $round = round($marginBeli,2);
-            ?>{{ number_format($round,2,",",".") }}</td>
+            $value = $round/$forex->Value;
+            ?>{{ number_format($value,2,",",".") }}</td>
             <td align="right"><?php 
             $string = $forex->HargaJual;
             $replace = str_replace(",", "", $string);
             $float = (float)$replace;
             $marginJual = $float * 1.02;
             $round = round($marginJual,2);
-            ?>{{ number_format($round,2,",",".") }}</td>
+            $value = $round/$forex->Value;
+            ?>{{ number_format($value,2,",",".") }}</td>
         </tr> 
     @endforeach
     </tbody>
